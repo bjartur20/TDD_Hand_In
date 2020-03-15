@@ -33,4 +33,9 @@ def test_error_negative():
 
     with pytest.raises(kata.NegativeError, match='Negatives not allowed: -4,-5'):
         kata.add('2,-4,3,-5')
+
+# 8
+def test_different_delimeter():
+    assert kata.add('//X\n1X2') == 3
+    assert kata.add('//%\n1%2%3') == 6
     
