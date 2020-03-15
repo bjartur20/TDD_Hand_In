@@ -1,4 +1,5 @@
 import kata
+import pytest
 
 # 1
 def test_add_empty_string():
@@ -24,3 +25,12 @@ def test_newline_instead_of_comma():
 # 6
 def test_ignore_bigger_than_1000():
     assert kata.add('1001,2') == 2
+
+# 7
+def test_error_negative():
+    with pytest.raises(kata.NegativeError, match='Negatives not allowed: -1'):
+        kata.add('-1,2')
+
+    with pytest.raises(kata.NegativeError, match='Negatives not allowed: -4,-5'):
+        kata.add('2,-4,3,-5')
+    
