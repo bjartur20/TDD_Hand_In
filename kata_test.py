@@ -12,3 +12,6 @@ def test_two_numbers():
 def test_unknown_number_of_numbers():
     assert kata.add('1,2,3,4,5') == 15
     assert kata.add('10,2,5,22,1,1') == 41
+
+def test_newline_instead_of_comma():
+    assert kata.add('1,2\n3') == 6
