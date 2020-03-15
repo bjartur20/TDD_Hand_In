@@ -39,3 +39,7 @@ def test_different_delimeter():
     assert kata.add('//X\n1X2') == 3
     assert kata.add('//%\n1%2%3') == 6
     
+# Extra test
+def test_harder_different_delimeter():
+    with pytest.raises(kata.NegativeError, match='Negatives not allowed: -1'):
+        kata.add('//X\n-1X2')
